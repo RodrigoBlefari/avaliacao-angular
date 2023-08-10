@@ -1,5 +1,5 @@
 <mat-card class="user-card">
-  <mat-card-content class="user-card-content">
+  <mat-card-content class="user-card-content" (click)="navigateToUser()">
     <div class="user-header">
       <div
         class="user-avatar"
@@ -26,6 +26,9 @@
       class="edit-button"
     >
       Editar
+    </button>
+    <button mat-button (click)="userDelete()" class="delete-button">
+      Excluir
     </button>
   </mat-card-actions>
 </mat-card>

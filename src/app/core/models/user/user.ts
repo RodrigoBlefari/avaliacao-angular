@@ -11,6 +11,7 @@ export interface User {
   location?: Location;
   registerDate?: string;
   updatedDate?: string;
+  active?: boolean;
 }
 export interface Location {
   street: string;

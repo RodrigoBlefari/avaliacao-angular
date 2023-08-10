@@ -20,19 +20,11 @@ export class UserListComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe(
       (data) => {
-        this.users = data.data; // Atribua a lista de usuários ao array
+        this.users = data.data;
       },
       (error) => {
         console.error('Erro ao buscar usuários:', error);
       }
     );
-  }
-
-  deleteUser(userId: string) {
-    // Implement delete logic here
-  }
-
-  navigateToUser(userId: string) {
-    this.router.navigate(['/users', userId]);
   }
 }
