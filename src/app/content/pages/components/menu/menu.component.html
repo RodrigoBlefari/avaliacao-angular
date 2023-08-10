@@ -1,0 +1,7 @@
+<div class="container-menu">
+  <button mat-button [matMenuTriggerFor]="menu">USUARIOS</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="navigateToList()">Listar</button>
+    <button mat-menu-item (click)="navigateToCreateUser()">Criar</button>
+  </mat-menu>
+</div>

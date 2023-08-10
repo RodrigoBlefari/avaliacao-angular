@@ -1,0 +1,85 @@
+<div class="user-cards">
+  <app-user-card [showButtons]="false" [user]="user"></app-user-card>
+  <mat-card class="user-card">
+    <mat-card-content class="user-card-content">
+      <form (ngSubmit)="submitForm()" [formGroup]="userForm">
+        <div class="user-details">
+          <div class="form-row">
+            <mat-form-field class="example-form-field">
+              <mat-label>Foto</mat-label>
+              <input
+                matInput
+                formControlName="picture"
+                required
+                [(ngModel)]="user.picture"
+              />
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+              <mat-label>Título</mat-label>
+              <mat-select
+                [(ngModel)]="user.title"
+                formControlName="title"
+                required
+              >
+                <mat-option
+                  *ngFor="let titleOption of titles"
+                  [value]="titleOption"
+                >
+                  {{ titleOption | uppercase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+              <mat-label>Nome</mat-label>
+              <input
+                matInput
+                formControlName="firstName"
+                required
+                [(ngModel)]="user.firstName"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field class="example-form-field">
+              <mat-label>Sobrenome</mat-label>
+              <input
+                matInput
+                formControlName="lastName"
+                required
+                [(ngModel)]="user.lastName"
+              />
+            </mat-form-field>
+          </div>
+          <div class="form-row">
+            <mat-form-field class="example-form-field">
+              <mat-label>E-Mail</mat-label>
+              <input
+                matInput
+                formControlName="email"
+                [(ngModel)]="user.email"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-card-actions class="user-card-actions">
+          <button mat-button (click)="navigateToList()" class="back-button">
+            Voltar
+          </button>
+          <button
+            mat-button
+            class="submit-button"
+            [class.active]="userForm.valid"
+            type="submit"
+            [disabled]="!userForm.valid"
+          >
+            {{ type === "create" ? "Criar" : "Editar" }}
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<app-loading-overlay
+  *ngIf="loading"
+  [message]="loadingMsg"
+></app-loading-overlay>

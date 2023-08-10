@@ -1,0 +1,44 @@
+<mat-card class="user-card">
+  <mat-card-content class="user-card-content">
+    <div class="user-header">
+      <div
+        class="user-avatar"
+        [class.miss]="user?.title?.toLowerCase() !== 'mr'"
+      >
+        <img [src]="user?.picture" />
+      </div>
+      <div>
+        <div class="user-title">{{ user?.title | uppercase }}</div>
+        <div class="user-name">{{ user?.firstName }} {{ user?.lastName }}</div>
+      </div>
+    </div>
+    <div class="user-details">
+      <div class="user-email"><strong>Email:</strong> {{ user?.email }}</div>
+      <div class="user-gender"><strong>Gênero:</strong> {{ user?.gender }}</div>
+      <div class="user-dob">
+        <strong>Data de Nascimento:</strong> {{ user?.dateOfBirth }}
+      </div>
+      <div class="user-phone"><strong>Telefone:</strong> {{ user?.phone }}</div>
+      <div class="user-location">
+        <strong>Localização:</strong>
+        {{ user?.location?.street }}, {{ user?.location?.city }},
+        {{ user?.location?.state }},
+        {{ user?.location?.country }}
+      </div>
+      <div class="user-register-date">
+        <strong>Data de Registro:</strong> {{ user?.registerDate }}
+      </div>
+      <div class="user-updated-date">
+        <strong>Data de Atualização:</strong> {{ user?.updatedDate }}
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="user-card-actions">
+    <button mat-button (click)="navigateToList()" class="edit-button">
+      Voltar
+    </button>
+    <button mat-button (click)="userDelete()" class="delete-button">
+      Excluir
+    </button>
+  </mat-card-actions>
+</mat-card>

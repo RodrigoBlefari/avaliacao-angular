@@ -1,0 +1,14 @@
+.home-container {
+    background-color: #1a1a1aa1;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    -webkit-box-shadow: 14px 28px 52px -14px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 14px 28px 52px -14px rgba(0, 0, 0, 0.75);
+    box-shadow: 14px 28px 52px -14px rgba(0, 0, 0, 0.75);
+}

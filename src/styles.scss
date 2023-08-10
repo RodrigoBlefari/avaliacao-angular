@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.user-card-body {
+    height: "100%";
+    background: rgb(233, 30, 99);
+    background: linear-gradient(0rad, rgb(233, 30, 99) 0%, rgb(63, 81, 181) 100%);
+    height: 100vh;
+    overflow: scroll;
+}

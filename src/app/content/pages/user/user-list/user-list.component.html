@@ -1,0 +1,11 @@
+<div class="user-card-body">
+  <app-menu></app-menu>
+  <app-header-user [title]="title | uppercase"></app-header-user>
+  <div class="user-cards">
+    <app-user-card
+      (click)="navigateToUser(user.id)"
+      [user]="user"
+      *ngFor="let user of users"
+    ></app-user-card>
+  </div>
+</div>
